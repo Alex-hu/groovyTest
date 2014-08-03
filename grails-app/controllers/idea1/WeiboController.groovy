@@ -4,10 +4,15 @@ import grails.plugins.rest.client.RestBuilder
 
 class WeiboController {
     def rest = new RestBuilder()
+
+    def resp = rest.get("https://api.weibo.com/2/statuses/public_timeline.json?access_token=2.006ZlAUCjhKUVD52b73a1105MzjvBE"){
+        accept "application/json"
+    }
+
     def index() {
-        def resp = rest.get("https://api.weibo.com/2/statuses/public_timeline.json?access_token=2.006ZlAUCjhKUVD52b73a1105MzjvBE"){
-            accept "application/json"
-        }
+//        def resp = rest.get("https://api.weibo.com/2/statuses/public_timeline.json?access_token=2.006ZlAUCjhKUVD52b73a1105MzjvBE"){
+//            accept "application/json"
+//        }
         def data = resp.json.statuses
         //后台分页处理 being.
         def page = new Page()
@@ -20,6 +25,13 @@ class WeiboController {
         //end.
 
         return [mesgList: data.getAt(startAt.. endAt), page: page];
+    }
+
+    def refreshData() {
+        resp = rest.get("https://api.weibo.com/2/statuses/public_timeline.json?access_token=2.006ZlAUCjhKUVD52b73a1105MzjvBE"){
+            accept "application/json"
+        }
+        redirect(uri: "/weibo/index")
     }
 
     def showTop() {

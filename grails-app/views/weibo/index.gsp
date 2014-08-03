@@ -18,6 +18,9 @@
         <li>
             <a class="home" href="/idea1/">Home</a>
         </li>
+        <li>
+            <a class="list" href="/idea1/weibo/refreshData">Refresh Data</a>
+        </li>
     </ul>
 </div>
 <table id="contentTable" class="table table-striped table-bordered table-condensed">
@@ -44,7 +47,6 @@
     </g:each>
     </tbody>
 </table>
-
 <div id="page" pageCount="${page.pageCount}" pageNum="${page.pageNum}" pageSize="${page.size}" pageLimit="${page.limit}"
      numberOfPage="${page.numberOfPage}">
 
