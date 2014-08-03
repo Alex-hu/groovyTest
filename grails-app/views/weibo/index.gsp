@@ -16,10 +16,10 @@
 <div class="nav" role="navigation">
     <ul>
         <li>
-            <a class="home" href="/idea1/">Home</a>
+            <a class="home" href="/">Home</a>
         </li>
         <li>
-            <a class="list" href="/idea1/weibo/refreshData">Refresh Data</a>
+            <a class="list" href="/weibo/refreshData">Refresh Data</a>
         </li>
     </ul>
 </div>
@@ -59,7 +59,7 @@
             totalPages: page.attr('pageCount'),
             numberOfPages: page.attr('numberOfPages'),
             pageUrl: function (type, page, current) {
-                return "/idea1/weibo/index?p=" + page;
+                return "/weibo/index?p=" + page;
             }
         }
         $('#page').bootstrapPaginator(options);
