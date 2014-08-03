@@ -18,6 +18,7 @@
         <asset:stylesheet src="bootstrap-responsive.min.css"/>
   		<asset:stylesheet src="application.css"/>
 		<asset:javascript src="application.js"/>
+        <asset:javascript src="bootstrap-paginator.min.js"/>
 		<g:layoutHead/>
 	</head>
 	<body>
